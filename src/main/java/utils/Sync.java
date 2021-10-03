@@ -13,14 +13,14 @@ import java.util.function.Function;
 public class Sync extends BaseTest {
 
     public void waitForElementToBeVisible(WebElement webElement){
-        WebDriverWait wait = new WebDriverWait(getDriver(), 30, 1000);
+        WebDriverWait wait = new WebDriverWait(driver, 30, 1000);
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
     }
 
     // Similarly, we can write FluentWait when we have use of avoid Exception and Custom Message or Exception
 
     public void FluentWait(WebElement webElement){
-        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 //.withTimeout(30, TimeUnit.SECONDS)
                 //.pollingEvery(1, TimeUnit.SECONDS)
                 .ignoring(NoSuchElementException.class);
